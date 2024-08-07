@@ -15,7 +15,4 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.dev *,
-.dev {
-  @apply outline outline-red-500;
-}
+
