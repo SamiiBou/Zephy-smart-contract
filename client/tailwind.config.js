@@ -9,7 +9,11 @@ export default {
           400: "var(--clr-purple-400)",
           300: "var(--clr-purple-300)",
         }
-      }
+      },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        orbitron: ["Orbitron", "sans-serif"],
+      },
     },
   },
   plugins: [],
