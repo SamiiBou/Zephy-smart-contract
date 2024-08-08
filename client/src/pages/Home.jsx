@@ -8,7 +8,8 @@ export default function Home() {
       <TextInput />
       <div> 
 
-      <Button >Hello</Button>
+      <Button>Hello</Button>
+      <Button variant="secondary">Hello</Button>
       </div>
     </div>
   )
