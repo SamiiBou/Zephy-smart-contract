@@ -4,6 +4,12 @@ require("dotenv").config();
 
 module.exports = {
     solidity: "0.8.26",
+    paths: {
+        sources: "./contracts",
+        tests: "./test",
+        cache: "./cache",
+        artifacts: "./artifacts",
+    },
     networks: {
         optimism: {
             url: "https://mainnet.optimism.io",
