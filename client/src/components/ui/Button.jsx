@@ -25,7 +25,7 @@ const Button = forwardRef(({ variant, className, ...htmlButtonProps}, ref) => {
 
   const styles = {
     primary: "bg-niche-purple-500 active:ring-4 transition-all active:ring-gray-400 hover:bg-niche-purple-400 text-white",
-    default: "bg-pink-400 active:ring-4 text-white transition-all active:ring-pink-200 hover:bg-niche-purple-400",
+    default: "bg-niche-purple-500 active:ring-4 text-white transition-all active:ring-pink-200 hover:bg-niche-purple-400",
     secondary: "bg-niche-purple-300",
   };
 

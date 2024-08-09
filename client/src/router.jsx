@@ -1,11 +1,21 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import SelectAvatar from './pages/SelectAvatar';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Login />,
+  },
+  {
+    path: "register",
+    element: <Register/>,
+  },
+  {
+    path: "select-avatar",
+    element: <SelectAvatar/>,
   },
   {
     path: "about",
