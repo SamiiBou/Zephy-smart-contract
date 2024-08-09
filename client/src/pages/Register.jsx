@@ -16,15 +16,15 @@ export default function Register() {
   });
   const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
+  function handleChange (e) {
     const { name, value } = e.target;
     setFormData(prevData => ({
       ...prevData,
-      [name]: value.trim()
+      [name]: value
     }));
-  };
+  }
 
-  const validateForm = () => {
+   function validateForm (){
     let newErrors = {};
     if (!formData.fullName) {
       newErrors.fullName = 'Full name is required';
@@ -38,11 +38,10 @@ export default function Register() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  function handleSubmit (e) {
     e.preventDefault();
     if (validateForm()) {
       console.log('Form is valid. Submitting...', formData);
-      // Here you would typically send the data to your server
       router.navigate("/select-avatar")
     } else {
       console.log('Form is invalid');
