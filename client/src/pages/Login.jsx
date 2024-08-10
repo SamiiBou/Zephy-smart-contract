@@ -1,17 +1,9 @@
-import zephyIcon from "../assets/fleet_logo.png";
 import Button from "../components/ui/Button";
 import { useNavigate } from "react-router-dom";
 import TextInput from "../components/ui/TextInput";
 
 export default function Login() {
   const navigate = useNavigate();
-  const handleLogin = () => {
-    console.log("login");
-  };
-
-  const handleCreateAccount = () => {
-    navigate("/register");
-  };
 
   return (
     <div className="flex bg-one justify-center items-center px-4 py-8 min-h-screen">
@@ -21,9 +13,22 @@ export default function Login() {
         <form>
           <TextInput label="Enter Email" />
 
-          <Button variant="primary" className="w-full">
+          <Button
+            variant="primary"
+            onClick={() => navigate("/dashboard")}
+            className="w-full"
+          >
             Authenticate
           </Button>
+          <div className="mt-3">
+            If you {"don't"} have an account, you can create one by{" "}
+            <a
+              className="text-purple-700 underline underline-offset-2"
+              href="/register"
+            >
+              clicking here
+            </a>
+          </div>
         </form>
       </div>
     </div>
