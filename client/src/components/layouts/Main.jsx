@@ -7,8 +7,9 @@ export default function Main() {
 
   return (
     <div className="min-h-screen bg-black w-full">
-      <nav className="fixed w-full">
-        <div className="container border-b-2 border-[rgba(255,255,255,.2)] text-white mx-auto py-3 px-4">
+      <nav className="fixed w-full border-b-2 border-[rgba(255,255,255,.2)] bg-opacity-10 backdrop-filter backdrop-blur-lg bg-white">
+        <div className="container  text-white mx-auto py-3 px-4  ">
+          {" "}
           <div className="flex items-center justify-between">
             <div className="logo">
               <Logo />

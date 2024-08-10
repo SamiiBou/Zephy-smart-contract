@@ -8,6 +8,7 @@ import Invoice, { Loader as InvoiceLoader } from "./pages/Invoice";
 
 import DashboardHome from "./pages/dashboard/Home";
 import DashboardInvoice from "./pages/dashboard/Invoice";
+import DashboardSettings from "./pages/dashboard/Settings";
 import DashboardLoan from "./pages/dashboard/Loan";
 
 import DashboardLayout from "./components/layouts/Dashboard";
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/loans",
         element: <DashboardLoan />,
+      },
+      {
+        path: "/dashboard/settings",
+        element: <DashboardSettings />,
       },
       {
         path: "/dashboard/goal",

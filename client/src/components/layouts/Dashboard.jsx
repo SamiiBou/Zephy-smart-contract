@@ -1,12 +1,24 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { FaHome, FaUser, FaCog, FaSignOutAlt } from "react-icons/fa";
+import {
+  FaHome,
+  FaCog,
+  FaSignOutAlt,
+  FaFileInvoice,
+  FaCreditCard,
+} from "react-icons/fa";
+import Logo from "../ui/Logo";
 
 function Dashboard() {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-row">
-      <nav className=" bg-purple-950 w-64 pt-[100px] h-screen left-0 top-0">
-        <ul className="py-4">
+      <nav className=" bg-purple-950 w-64  h-screen left-0 top-0">
+        <div className="px-4 py-4">
+          <Logo textWhite={true} />
+        </div>
+        <ul className="py-4 px-4">
           <li className="mb-2">
             <Link
               to="/dashboard"
@@ -21,7 +33,7 @@ function Dashboard() {
               to="/dashboard/invoices"
               className="flex items-center px-4 py-2 text-gray-300 hover:bg-gray-700"
             >
-              <FaUser className="mr-3 text-lg" />
+              <FaFileInvoice className="mr-3 text-lg" />
               <span>Invoices</span>
             </Link>
           </li>
@@ -30,13 +42,13 @@ function Dashboard() {
               to="/dashboard/loans"
               className="flex items-center px-4 py-2 text-gray-300 hover:bg-gray-700"
             >
-              <FaUser className="mr-3 text-lg" />
+              <FaCreditCard className="mr-3 text-lg" />
               <span>Loans</span>
             </Link>
           </li>
           <li className="mb-2">
             <Link
-              to="/settings"
+              to="/dashboard/settings"
               className="flex items-center px-4 py-2 text-gray-300 hover:bg-gray-700"
             >
               <FaCog className="mr-3 text-lg" />
@@ -44,13 +56,13 @@ function Dashboard() {
             </Link>
           </li>
           <li className="mb-2">
-            <Link
-              to="/logout"
-              className="flex items-center px-4 py-2 text-gray-300 hover:bg-gray-700"
+            <button
+              onClick={navigate("/")}
+              className="flex items-center w-full px-4 py-2 text-gray-300 hover:bg-gray-700"
             >
               <FaSignOutAlt className="mr-3 text-lg" />
               <span>Logout</span>
-            </Link>
+            </button>
           </li>
         </ul>
       </nav>

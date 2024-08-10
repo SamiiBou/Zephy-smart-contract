@@ -16,13 +16,13 @@ export default function Home() {
             <h1 className="text-5xl font-orbitron md:text-8xl font-bold mb-4">
               Revolutionize Your Finances with Zephy
             </h1>
-            <p className="text-xl mb-6">
+            <p className="text-xl leading-8 mb-6">
               Generate payment links instantly <br />
               and access crypto-backed loans with ease.
             </p>
             <div className="inline-flex space-x-4">
               <Button>Get Started</Button>
-              <Button className="bg-white text-black hover:bg-slate-300 !outline-white">
+              <Button className="bg-white !text-black hover:bg-slate-300 !outline-white">
                 Learn More
               </Button>
             </div>

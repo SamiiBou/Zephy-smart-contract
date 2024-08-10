@@ -58,11 +58,11 @@ export default function Register() {
               >
                 {cards.map((card, index) => (
                   <div key={index} className="w-full flex-shrink-0 p-4">
-                    <div className="bg-white rounded-lg shadow-md p-6">
+                    <div className="bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg  rounded-lg shadow-md p-6">
                       <h3 className="text-xl font-semibold mb-2 text-[#47227f]">
                         {card.title}
                       </h3>
-                      <p className="text-gray-600">{card.description}</p>
+                      <p className="text-white">{card.description}</p>
                     </div>
                   </div>
                 ))}
