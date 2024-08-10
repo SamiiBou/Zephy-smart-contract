@@ -47,18 +47,16 @@ export default function Main() {
         <section className="h-full">
           <Outlet />
         </section>
-        <footer className="bg-gray-800 text-white py-8">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-wrap justify-between">
-              <div className="w-full md:w-1/3 mb-6 md:mb-0">
-                <h3 className="text-xl font-bold mb-2">About Us</h3>
-                <p className="text-sm">
-                  We are a decentralized platform leveraging blockchain
-                  technology to revolutionize the web.
-                </p>
+        <footer className="bg-black border-t border-[rgba(255,255,255,.2)] text-white py-8">
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="flex flex-col md:flex-row justify-between">
+              <div className="w-full mb-6 md:mb-0">
+                <Logo textWhite={true} />
               </div>
-              <div className="w-full md:w-1/3 mb-6 md:mb-0">
-                <h3 className="text-xl font-bold mb-2">Quick Links</h3>
+              <div className="mb-6 md:mb-0">
+                <h3 className="text-xl font-bold mb-2 whitespace-nowrap">
+                  Quick Links
+                </h3>
                 <ul className="text-sm">
                   <li>
                     <a href="#" className="hover:text-gray-400">
@@ -76,23 +74,6 @@ export default function Main() {
                     </a>
                   </li>
                 </ul>
-              </div>
-              <div className="w-full md:w-1/3">
-                <h3 className="text-xl font-bold mb-2">Connect</h3>
-                <div className="flex space-x-4">
-                  <a href="#" className="text-2xl hover:text-gray-400">
-                    <i className="fab fa-twitter"></i>
-                  </a>
-                  <a href="#" className="text-2xl hover:text-gray-400">
-                    <i className="fab fa-telegram"></i>
-                  </a>
-                  <a href="#" className="text-2xl hover:text-gray-400">
-                    <i className="fab fa-discord"></i>
-                  </a>
-                  <a href="#" className="text-2xl hover:text-gray-400">
-                    <i className="fab fa-github"></i>
-                  </a>
-                </div>
               </div>
             </div>
             <div className="mt-8 text-center text-sm">
