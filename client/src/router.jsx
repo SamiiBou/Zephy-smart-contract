@@ -5,14 +5,27 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import SelectAvatar from "./pages/SelectAvatar";
 import Invoice, { Loader as InvoiceLoader } from "./pages/Invoice";
-import Dashboard from "./components/layouts/Dashboard";
+
 
 import DashboardHome from "./pages/dashboard/Home";
+
+import DashboardLayout from "./components/layouts/Dashboard";
+import MainLayout from "./components/layouts/Main";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "about",
+        element: <div>About</div>,
+      },
+    ]
   },
   {
     path: "/login",
@@ -33,7 +46,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: <DashboardLayout />,
     children: [
       {
         path: "/dashboard",
@@ -45,6 +58,7 @@ const router = createBrowserRouter([
       },
     ],
   },
+<<<<<<< HEAD
   {
     path: "home",
     element: <Home/>,
@@ -53,6 +67,8 @@ const router = createBrowserRouter([
     path: "about",
     element: <div>About</div>,
   },
+=======
+>>>>>>> origin/feat/client
 ]);
 
 export default router;
