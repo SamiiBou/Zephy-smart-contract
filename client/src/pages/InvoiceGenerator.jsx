@@ -56,7 +56,7 @@ const InvoiceGenerator = () => {
               <img src={logo} className="w-12 h-12 object-contain" alt="Logo" />
             </div>
             <div className="flex flex-col items-end">
-              <label className="block mb-1">Invoice Number</label>
+              <label className="block mb-1 font-orbitron">Invoice Number</label>
               <TextInput
                 type="text"
                 name="invoiceNumber"
@@ -70,9 +70,9 @@ const InvoiceGenerator = () => {
             {" "}
             {/* Reduced space between label-input pairs */}
             <div className="flex justify-between">
-              <label className="block mb-0.5">Your details</label>{" "}
+              <label className="block mb-0.5 font-orbitron">Your details</label>{" "}
               {/* Reduced bottom margin */}
-              <label className="block mb-0.5">Bill to</label>{" "}
+              <label className="block mb-0.5 font-orbitron">Bill to</label>{" "}
               {/* Reduced bottom margin */}
             </div>
             <div className="flex justify-between items-center space-x-4">
@@ -100,7 +100,9 @@ const InvoiceGenerator = () => {
           </div>
           <div className="flex justify-between space-x-4">
             <div className="flex-1">
-              <label className="block mb-1 text-left">Date issued</label>
+              <label className="block mb-1 text-left font-orbitron">
+                Date issued
+              </label>
               <input
                 type="date"
                 name="date"
@@ -123,7 +125,9 @@ const InvoiceGenerator = () => {
 
           <div className="pt-8">
             <div className="space-y-2 bg-white rounded-lg p-4">
-              <h3 className="text-xl font-semibold mb-2">Items</h3>
+              <h3 className="text-xl font-semibold mb-2 font-orbitron">
+                Items
+              </h3>
               {invoiceData.items.map((item, index) => (
                 <div key={index} className="flex space-x-2 mb-2">
                   <input
@@ -189,7 +193,7 @@ const InvoiceGenerator = () => {
                   onClick={addItem}
                   className="bg-[#47227f] text-white w-12 h-12 rounded-full flex items-center justify-center"
                 >
-                  +
+                  Add
                 </Button>
               </div>
             </div>
@@ -197,9 +201,85 @@ const InvoiceGenerator = () => {
           {/* Items section */}
         </form>
       </div>
-
       {/* Preview Section */}
-      <div className="w-full md:w-1/2 p-8 bg-white">
+      <div className=" w-full md:w-1/2 p-8 bg-white">
+        <h2 className="text-2xl font-bold mb-6 font-orbitron">
+          Invoice Preview
+        </h2>
+        <div className="w-full max-w-xl pt-16">
+          {/* Logo and Invoice Number */}
+          <div className="flex justify-between items-center mb-8">
+            <div className="rounded-full bg-[#47227f] p-2 flex items-center justify-center">
+              <img src={logo} className="w-12 h-12 object-contain" alt="Logo" />
+            </div>
+            <div className="text-xl font-orbitron">
+              Invoice #{invoiceData.invoiceNumber}
+            </div>
+          </div>
+
+          {/* Sender, Receiver, and Date */}
+          <div className="flex flex-col sm:flex-row justify-between mb-8 font-inter px-2">
+            <div className="mb-4 sm:mb-0">
+              <p className="font-semibold font-inter">From:</p>
+              <p className="font-inter whitespace-pre-line">
+                {invoiceData.from}
+              </p>
+            </div>
+            <div className="mb-4 sm:mb-0">
+              <p className="font-semibold font-inter">To:</p>
+              <p className="font-inter whitespace-pre-line">{invoiceData.to}</p>
+            </div>
+            <div>
+              <p className="font-semibold font-inter">Date:</p>
+              <p className="font-inter">{invoiceData.date}</p>
+              <p className="font-semibold font-inter">Due Date:</p>
+              <p className="font-inter">{invoiceData.dueDate}</p>
+            </div>
+          </div>
+
+          {/* Main container for invoice details */}
+          <div className="bg-white rounded-lg ">
+            {/* Invoice Details */}
+            <div className="border rounded-lg p-4 mb-8">
+              <div className="grid grid-cols-4 gap-4 border-b pb-2 mb-2">
+                <span className="font-semibold">Description</span>
+                <span className="font-semibold text-right">Quantity</span>
+                <span className="font-semibold text-right">Price</span>
+                <span className="font-semibold text-right">Total</span>
+              </div>
+              {invoiceData.items.map((item, index) => (
+                <div key={index} className="grid grid-cols-4 gap-4 mb-4">
+                  <span className="font-inter">{item.description}</span>
+                  <span className="font-orbitron text-right">
+                    {item.quantity}
+                  </span>
+                  <span className="font-orbitron text-right">
+                    ${item.price.toFixed(2)}
+                  </span>
+                  <span className="font-orbitron text-right">
+                    ${(item.quantity * item.price).toFixed(2)}
+                  </span>
+                </div>
+              ))}
+              <div className="flex justify-between font-bold text-lg mt-2 border-t pt-2">
+                <span>Total</span>
+                <span className="font-orbitron">
+                  ${calculateTotal().toFixed(2)}
+                </span>
+              </div>
+            </div>
+
+            {/* Payment Button */}
+            <div className="text-center">
+              <button className="bg-[#47227f]/80 hover:bg-[#47227f] text-white font-bold py-2 px-4 rounded">
+                Generate Payment link
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="w-full md:w-1/2 p-8 bg-white">
         <h2 className="text-2xl font-bold mb-6">Invoice Preview</h2>
         <div className="border p-6 rounded shadow-lg">
           <div className="flex justify-between mb-4">
@@ -246,7 +326,7 @@ const InvoiceGenerator = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
