@@ -14,7 +14,7 @@ export default function SelectAvatar() {
       setTimeout(() => {
         setSelectedAvatar(avatar);
         setFadeOut(false);
-      }, 500); // Increased timeout for smoother transition
+      }, 500);
     }
   
     return (
