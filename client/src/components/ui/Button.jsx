@@ -27,6 +27,7 @@ const Button = forwardRef(({ variant, className, ...htmlButtonProps }, ref) => {
   };
 
   const styles = {
+    cta: "bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95 !outline-2 !outline-indigo-700 !outline-offset-2 !rounded-full shadow-lg hover:shadow-xl",
     primary:
       "bg-niche-purple-500 active:ring-4 transition-all active:ring-gray-400 hover:bg-niche-purple-400 text-white",
     default:

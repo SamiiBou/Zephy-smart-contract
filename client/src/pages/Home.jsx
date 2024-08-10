@@ -6,22 +6,25 @@ export default function Home() {
     <>
       <section
         id="hero"
-        className="bg-one pt-40 min-h-[550px] flex items-center text-white py-20"
+        className="bg-one pt-60 min-h-[550px] flex items-center text-white py-40"
       >
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="max-w-4xl mx-auto px-4">
+          <div>
+            <span className="bg-purple-700 tracking-widest font-bold px-3 py-1 rounded-full">
+              🏆 #1
+            </span>
+            <h1 className="text-5xl font-orbitron md:text-8xl font-bold mb-4">
               Revolutionize Your Finances with Zephy
             </h1>
             <p className="text-xl mb-6">
-              Generate payment links instantly and access crypto-backed loans
-              with ease.
+              Generate payment links instantly <br />
+              and access crypto-backed loans with ease.
             </p>
-            <div className="flex justify-center">
-              <div className="inline-flex space-x-4">
-                <Button>Get Started</Button>
-                <Button variant="secondary">Learn More</Button>
-              </div>
+            <div className="inline-flex space-x-4">
+              <Button>Get Started</Button>
+              <Button className="bg-white text-black hover:bg-slate-300 !outline-white">
+                Learn More
+              </Button>
             </div>
           </div>
         </div>

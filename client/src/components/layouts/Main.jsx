@@ -1,29 +1,27 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 import Logo from "../ui/Logo";
+
 export default function Main() {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-black w-full">
       <nav className="fixed w-full">
-        <div className="container text-white mx-auto py-3 px-4">
+        <div className="container border-b-2 border-[rgba(255,255,255,.2)] text-white mx-auto py-3 px-4">
           <div className="flex items-center justify-between">
             <div className="logo">
               <Logo />
             </div>{" "}
-            <ul className="flex space-x-6">
+            <ul className="flex space-x-2">
               <li>
-                <a className="nav-item" href="#">
+                <a className="nav-item" href="/">
                   Home
                 </a>
               </li>
               <li>
-                <a className="nav-item" href="#">
+                <a className="nav-item" href="/about">
                   About
-                </a>
-              </li>
-              <li>
-                <a className="nav-item" href="#">
-                  Services
                 </a>
               </li>
               <li>
@@ -33,9 +31,12 @@ export default function Main() {
               </li>
             </ul>
             <div>
-              <Button variant="secondary" className="text-white rounded-lg">
-                {" "}
-                Create an Account
+              <Button
+                variant="cta"
+                onClick={() => navigate("/register")}
+                className="text-white rounded-lg"
+              >
+                Join Us
               </Button>
             </div>
           </div>

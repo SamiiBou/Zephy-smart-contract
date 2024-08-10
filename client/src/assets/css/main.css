@@ -61,5 +61,5 @@
 }
 
 .nav-item {
-  @apply px-3 hover:bg-slate-300 hover:rounded-full hover:text-black;
+  @apply px-3 hover:bg-slate-300 tracking-widest uppercase text-sm hover:text-black w-full rounded-sm  font-medium py-1;
 }
