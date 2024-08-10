@@ -6,7 +6,6 @@ import Register from "./pages/Register";
 import SelectAvatar from "./pages/SelectAvatar";
 import Invoice, { Loader as InvoiceLoader } from "./pages/Invoice";
 
-
 import DashboardHome from "./pages/dashboard/Home";
 
 import DashboardLayout from "./components/layouts/Dashboard";
@@ -25,7 +24,7 @@ const router = createBrowserRouter([
         path: "about",
         element: <div>About</div>,
       },
-    ]
+    ],
   },
   {
     path: "/login",
@@ -58,17 +57,14 @@ const router = createBrowserRouter([
       },
     ],
   },
-<<<<<<< HEAD
   {
     path: "home",
-    element: <Home/>,
+    element: <Home />,
   },
   {
     path: "about",
     element: <div>About</div>,
   },
-=======
->>>>>>> origin/feat/client
 ]);
 
 export default router;
