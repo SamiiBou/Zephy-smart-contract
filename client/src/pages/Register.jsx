@@ -4,6 +4,7 @@ import { useState } from "react";
 import router from "../router";
 import useForm from "../hooks/useForm";
 import { registerValidator } from "../utils/validators";
+import bgOne from "../assets/bg-register.jpg";
 
 export default function Register() {
   const [activeCard, setActiveCard] = useState(0);
@@ -40,12 +41,12 @@ export default function Register() {
 
   return (
     <main className="min-h-screen flex flex-col justify-center md:flex-row">
-      <div className="w-full md:w-1/2 p-8 hidden md:flex items-center justify-center order-2 bg-pink-200 md:order-1">
+      <div style={{ backgroundImage: `url(${bgOne})` }} className="w-full md:w-1/2 p-8 hidden md:flex items-center justify-center order-2 bg-pink-200 md:order-1">
         <section className="max-w-lg">
-          <h1 className="text-3xl font-bold font-orbitron text-[#47227f] px-4 pt-12 mb-6">
+          <h1 className="text-3xl font-bold font-orbitron text-white px-4 pt-12 mb-6">
             Simplify Your Finances
           </h1>
-          <p className="font-inter text-gray-600 text-sm sm:text-base md:text-lg px-4 mb-12">
+          <p className="font-inter text-gray-500 text-sm sm:text-base md:text-lg px-4 mb-12">
             Get more from your money. Create an account to effortlessly send and
             receive payments and access convenient loans.
           </p>
@@ -110,7 +111,7 @@ export default function Register() {
               Terms and Conditions and Privacy Policy.
             </label>
             <Button className="w-full mb-3" onClick={submit}>
-              Register
+              Continue with Passkeys
             </Button>
             <div>
               If you already have an account,{" "}
