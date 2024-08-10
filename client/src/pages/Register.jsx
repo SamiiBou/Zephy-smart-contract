@@ -3,7 +3,6 @@ import TextInput from "../components/ui/TextInput";
 import { useState } from "react";
 import useForm from "../hooks/useForm";
 // import { registerValidator } from "../utils/validators";
-import bgOne from "../assets/images/bg-register.jpg";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
