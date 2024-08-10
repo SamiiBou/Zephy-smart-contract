@@ -46,7 +46,7 @@ export default function Register() {
           <h1 className="text-3xl font-bold font-orbitron text-white px-4 pt-12 mb-6">
             Simplify Your Finances
           </h1>
-          <p className="font-inter text-gray-500 text-sm sm:text-base md:text-lg px-4 mb-12">
+          <p className="font-inter text-gray-300 text-sm sm:text-base md:text-lg px-4 mb-12">
             Get more from your money. Create an account to effortlessly send and
             receive payments and access convenient loans.
           </p>

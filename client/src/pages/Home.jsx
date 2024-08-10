@@ -21,7 +21,9 @@ export default function Home() {
               and access crypto-backed loans with ease.
             </p>
             <div className="inline-flex space-x-4">
-              <Button>Get Started</Button>
+              <Button onClick={() => (location.href = "/login")}>
+                Get Started
+              </Button>
               <Button className="bg-white !text-black hover:bg-slate-300 !outline-white">
                 Learn More
               </Button>

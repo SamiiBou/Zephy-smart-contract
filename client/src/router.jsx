@@ -27,10 +27,14 @@ const router = createBrowserRouter([
         path: "about",
         element: <div>About</div>,
       },
+      {
+        path: "contact",
+        element: <div>Contact Us</div>,
+      },
     ],
   },
   {
-    path: "/login",
+    path: "login",
     element: <Login />,
   },
   {
@@ -71,6 +75,14 @@ const router = createBrowserRouter([
         element: <div>Home GOAL!!</div>,
       },
     ],
+  },
+  {
+    path: "home",
+    element: <Home />,
+  },
+  {
+    path: "about",
+    element: <div>About</div>,
   },
 ]);
 
