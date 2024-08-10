@@ -1,12 +1,13 @@
 import Button from "../components/ui/Button";
 import TextInput from "../components/ui/TextInput";
 import { useState } from "react";
-import router from "../router";
 import useForm from "../hooks/useForm";
-import { registerValidator } from "../utils/validators";
-import bgOne from "../assets/bg-register.jpg";
+// import { registerValidator } from "../utils/validators";
+import bgOne from "../assets/images/bg-register.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
+  const router = useNavigate();
   const [activeCard, setActiveCard] = useState(0);
   const cards = [
     {
@@ -28,20 +29,20 @@ export default function Register() {
     setFormValue,
     values: form,
   } = useForm({
-    validator: registerValidator,
+    // validator: registerValidator,
     initialValues: {
       fullName: "",
       email: "",
     },
     action: async (values) => {
       console.log("Form submitted with values:", values);
-      router.navigate("/select-avatar");
+      router("/select-avatar");
     },
   });
 
   return (
     <main className="min-h-screen flex flex-col justify-center md:flex-row">
-      <div style={{ backgroundImage: `url(${bgOne})` }} className="w-full md:w-1/2 p-8 hidden md:flex items-center justify-center order-2 bg-pink-200 md:order-1">
+      <div className="w-full md:w-1/2 p-8 hidden md:flex items-center justify-center order-2 bg-pink-200 bg-one md:order-1">
         <section className="max-w-lg">
           <h1 className="text-3xl font-bold font-orbitron text-white px-4 pt-12 mb-6">
             Simplify Your Finances
