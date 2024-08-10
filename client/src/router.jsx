@@ -10,6 +10,7 @@ import DashboardHome from "./pages/dashboard/Home";
 
 import DashboardLayout from "./components/layouts/Dashboard";
 import MainLayout from "./components/layouts/Main";
+import InvoiceGenerator from "./pages/InvoiceGenerator";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/goal",
         element: <div>Home GOAL!!</div>,
+      },
+      {
+        path: "/dashboard/invoiceGenerator",
+        element: <InvoiceGenerator />,
       },
     ],
   },
