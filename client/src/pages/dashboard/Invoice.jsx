@@ -202,7 +202,7 @@ export default function Invoice() {
                   <Button
                     type="button"
                     onClick={addItem}
-                    className="bg-[#47227f] text-white w-12 h-12 rounded-full flex items-center justify-center"
+                    className="bg-[#47227f] text-white h-12 rounded-md px-6 flex items-center justify-center"
                   >
                     Add
                   </Button>

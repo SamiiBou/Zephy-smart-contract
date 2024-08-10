@@ -65,7 +65,7 @@ function Dashboard() {
       <main className="w-full flex h-screen p-3 overflow-y-auto justify-between flex-col">
         <div>
           <header className="bg-white border-b border-gray-200">
-            <div className="max-w-7xl mx-auto py-3 pb-6 px-4 sm:px-6 lg:px-8">
+            <div className="py-3 pb-6 px-4 sm:px-6 lg:px-8">
               <h3 className="text-xl font-orbitron font-bold text-gray-900">
                 Dashboard
               </h3>
