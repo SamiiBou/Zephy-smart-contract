@@ -228,8 +228,8 @@
       ]
     },
     "C:\\Users\\sami-\\myprojects\\fintech-smart-contract\\contracts\\LoanContract.sol": {
-      "lastModificationDate": 1723175102712,
-      "contentHash": "abec922514043dad59bab173bafafa18",
+      "lastModificationDate": 1723308215313,
+      "contentHash": "79b0418fbf5ec4f2bfdf916b01d20f91",
       "sourceName": "contracts/LoanContract.sol",
       "solcConfig": {
         "version": "0.8.26",
