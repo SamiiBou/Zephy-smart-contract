@@ -1,7 +1,9 @@
 import Button from "../components/ui/Button";
 import TextInput from "../components/ui/TextInput";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import useForm from "../hooks/useForm";
+import { AlchemySigner } from "@alchemy/aa-alchemy";
+import { useMutation } from "@tanstack/react-query";
 // import { registerValidator } from "../utils/validators";
 import { useNavigate } from "react-router-dom";
 
@@ -37,6 +39,34 @@ export default function Register() {
       console.log("Form submitted with values:", values);
       router("/select-avatar");
     },
+  });
+
+  const signer = useMemo(
+    () =>
+      new AlchemySigner({
+        client: {
+          connection: {
+            jwt: "cLTpHWqs6iaOgFrnuxMVl9Z1Ung00otf",
+          },
+          iframeConfig: {
+            iframeContainerId: "turnkey-iframe-container",
+          },
+        },
+      }),
+    []
+  );
+
+  const {
+    mutate: signup,
+    isLoading,
+    data: user,
+  } = useMutation({
+    mutationFn: () =>
+      signer.authenticate({
+        type: "passkey",
+        createNew: true,
+        username: "PASSKEY_NAME",
+      }),
   });
 
   return (
