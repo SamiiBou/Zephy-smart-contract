@@ -26,7 +26,7 @@ export default function Register() {
   ];
   const {
     errors,
-    submit,
+    // submit,
     setFormValue,
     values: form,
   } = useForm({
@@ -58,8 +58,8 @@ export default function Register() {
 
   const {
     mutate: signup,
-    isLoading,
-    data: user,
+    // isLoading,
+    // data: user,
   } = useMutation({
     mutationFn: () =>
       signer.authenticate({
