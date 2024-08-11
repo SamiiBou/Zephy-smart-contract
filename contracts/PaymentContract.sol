@@ -35,7 +35,11 @@ contract PaymentContract is ReentrancyGuard {
                 sender: payable(msg.sender),
                 recipient: _recipient,
                 amount: msg.value,
+<<<<<<< HEAD
                 isPaid: true,  
+=======
+                isPaid: true,  // Marquer comme payé immédiatement
+>>>>>>> origin/feat/client
                 isCancelled: false
             });
 

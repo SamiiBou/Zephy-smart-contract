@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a237e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a148c;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-gradient)"/>
+
+  <g transform="translate(400,300)">
+    <circle r="250" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.1"/>
+    <circle r="200" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.15"/>
+    <circle r="150" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.2"/>
+  </g>
+
+  <!-- Crypto coins -->
+  <g transform="translate(150,150)" filter="url(#glow)">
+    <circle r="60" fill="#f9a825"/>
+    <text x="0" y="10" font-family="Arial" font-size="40" fill="white" text-anchor="middle">₿</text>
+  </g>
+  <g transform="translate(650,450)" filter="url(#glow)">
+    <circle r="50" fill="#0277bd"/>
+    <text x="0" y="10" font-family="Arial" font-size="35" fill="white" text-anchor="middle">Ξ</text>
+  </g>
+
+  <!-- Loan representation -->
+  <g transform="translate(400,200)">
+    <rect x="-100" y="-30" width="200" height="60" rx="10" fill="#4caf50" opacity="0.8"/>
+    <text x="0" y="10" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Crypto Loans</text>
+  </g>
+
+  <!-- Payment link representation -->
+  <g transform="translate(400,400)">
+    <path d="M-80,-40 L80,-40 L80,40 L-80,40 Z" fill="#ff4081" opacity="0.8"/>
+    <text x="0" y="10" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Payment Link</text>
+  </g>
+
+  <!-- Connecting lines -->
+  <g stroke="#ffffff" stroke-width="2" opacity="0.5">
+    <line x1="210" y1="150" x2="300" y2="200"/>
+    <line x1="500" y1="200" x2="600" y2="400"/>
+    <line x1="400" y1="260" x2="400" y2="360"/>
+  </g>
+
+  <!-- Finance symbols -->
+  <g fill="#ffffff" opacity="0.7">
+    <text x="100" y="350" font-family="Arial" font-size="40">$</text>
+    <text x="700" y="250" font-family="Arial" font-size="40">€</text>
+    <text x="300" y="550" font-family="Arial" font-size="40">£</text>
+  </g>
+
+  <!-- Decorative elements -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.2">
+    <path d="M0,0 L800,600"/>
+    <path d="M800,0 L0,600"/>
+  </g>
+</svg>

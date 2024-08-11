@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .max-content-width {
+    max-width: 100rem;
+  }
+}
+
+.max-container {
+  @apply mx-auto max-content-width py-10 px-7 md:px-[3.75rem];
+}
+
+.login-container {
+  @apply h-screen w-screen flex  items-center bg-white text-black;
+}
+/* TOOL FOR DEBUGING UI */
+.dev *,
+.dev {
+  @apply outline outline-red-500;
+}
+/* END */
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: "";
+  position: absolute;
+  top: var(--coord-y, 50%);
+  left: var(--coord-x, 50%);
+  width: 50%;
+  aspect-ratio: 1/1;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: ripple 0.5s linear infinite;
+}
+
+.bg-one {
+  background-image: url("/bg-register.jpg");
+}
+
+.nav-item {
+  @apply px-3 hover:bg-slate-300 tracking-widest uppercase text-sm hover:text-black w-full rounded-sm  font-medium py-1;
+}
