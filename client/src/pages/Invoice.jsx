@@ -8,7 +8,7 @@ export async function Loader({ params }) {
 export default function Invoice() {
   const ref = useLoaderData();
   const invoiceData = {
-    invoiceNumber: "INV-2023-001",
+    invoiceNumber: ref,
     senderEmail: "sender@example.com",
     receiverEmail: "receiver@example.com",
     date: "2023-08-10",

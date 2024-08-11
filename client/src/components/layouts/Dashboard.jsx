@@ -14,7 +14,7 @@ function Dashboard() {
 
   return (
     <div className="flex flex-row h-screen w-full">
-      <nav className=" w-72 p-3 h-screen left-0 top-0">
+      <nav className=" w-[20rem] p-3 h-screen left-0 top-0">
         <div className="bg-purple-950 flex flex-col justify-between rounded-lg h-full ">
           <div>
             <div className="px-4 py-4">
