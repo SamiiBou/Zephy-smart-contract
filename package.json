@@ -20,5 +20,8 @@
     "ethereum-waffle": "^4.0.10",
     "ethers": "^5.7.2",
     "hardhat": "^2.22.8"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.51.23"
   }
 }
