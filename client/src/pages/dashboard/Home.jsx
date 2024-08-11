@@ -1,9 +1,11 @@
 import Card from "../../components/layouts/Card";
+import Alert from "../../components/ui/Alert";
+import DataTable from "../../components/ui/DataTable";
 
 export default function Home() {
   return (
     <main className="flex-grow">
-      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <div className="container mx-auto py-6 sm:px-6 lg:px-8">
         <section id="overview" className="mb-8">
           <div className="mb-4 bg-black p-4 rounded text-white">
             <h1 className="font-bold text-lg">Welcome User 👋</h1>
@@ -17,10 +19,18 @@ export default function Home() {
             <Card title="Total Credit Score">10</Card>
           </div>
         </section>
-        <section id="analytics" className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Analytics</h2>
-          <div className="bg-white shadow rounded-lg p-6">
-            {/* Add your charts or graphs here */}
+        <section>
+          <Alert variant="warning">
+            Your next due loan date is on 12/12/2023
+          </Alert>
+        </section>
+        <section id="invoices" className="mb-8">
+          <div className="">
+            <DataTable
+              label="Invoices"
+              data={[]}
+              headers={["SN", "Invoice ID", "Amount", "Status"]}
+            />
           </div>
         </section>
       </div>
