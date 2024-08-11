@@ -2,7 +2,7 @@ import Button from "../components/ui/Button";
 import TextInput from "../components/ui/TextInput";
 import { useState, useMemo } from "react";
 import useForm from "../hooks/useForm";
-import { AlchemySigner } from "@alchemy/aa-alchemy";
+import * as alc from "@alchemy/aa-alchemy";
 import { useMutation } from "@tanstack/react-query";
 // import { registerValidator } from "../utils/validators";
 import { useNavigate } from "react-router-dom";
@@ -43,7 +43,7 @@ export default function Register() {
 
   const signer = useMemo(
     () =>
-      new AlchemySigner({
+      new alc.AlchemySignerWebClient({
         client: {
           connection: {
             jwt: "cLTpHWqs6iaOgFrnuxMVl9Z1Ung00otf",
@@ -71,6 +71,7 @@ export default function Register() {
 
   return (
     <main className="min-h-screen flex flex-col justify-center md:flex-row">
+      <iframe id="turnkey-iframe-container" />
       <div className="w-full md:w-1/2 p-8 hidden md:flex items-center justify-center order-2 bg-pink-200 bg-one md:order-1">
         <section className="max-w-lg">
           <h1 className="text-3xl font-bold font-orbitron text-white px-4 pt-12 mb-6">
@@ -140,7 +141,7 @@ export default function Register() {
               <input type="checkbox" /> By checking this box, you agree to our
               Terms and Conditions and Privacy Policy.
             </label>
-            <Button className="w-full mb-3" onClick={submit}>
+            <Button className="w-full mb-3" onClick={signup}>
               Continue with Passkeys
             </Button>
             <div>
