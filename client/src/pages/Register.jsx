@@ -1,6 +1,6 @@
 import Button from "../components/ui/Button";
 import TextInput from "../components/ui/TextInput";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import useForm from "../hooks/useForm";
 import * as alc from "@alchemy/aa-alchemy";
 import { useMutation } from "@tanstack/react-query";
@@ -24,6 +24,8 @@ export default function Register() {
       description: "Gain valuable insights into your spending habits.",
     },
   ];
+
+  const iframeContainer = useRef();
   const {
     errors,
     // submit,
@@ -44,13 +46,12 @@ export default function Register() {
   const signer = useMemo(
     () =>
       new alc.AlchemySignerWebClient({
-        client: {
-          connection: {
-            jwt: "cLTpHWqs6iaOgFrnuxMVl9Z1Ung00otf",
-          },
-          iframeConfig: {
-            iframeContainerId: "turnkey-iframe-container",
-          },
+        connection: {
+          apiKey: "jmq-jMPqCVXlVcTjoiGrcw1hj7I9SiWU",
+        },
+        iframeConfig: {
+          iframeElementId: "alchemy-aa-iframe",
+          iframeContainerId: "alchemy-aa-iframe-container",
         },
       }),
     []
@@ -70,8 +71,15 @@ export default function Register() {
   });
 
   return (
-    <main className="min-h-screen flex flex-col justify-center md:flex-row">
-      <iframe id="turnkey-iframe-container" />
+    <main
+      id="alchemy-aa-iframe-container"
+      ref={iframeContainer}
+      className="min-h-screen relative flex flex-col justify-center md:flex-row"
+    >
+      <iframe
+        id="alchemy-aa-iframe"
+        className="absolute z-1 w-[100px] h-[150px] bg-white"
+      />
       <div className="w-full md:w-1/2 p-8 hidden md:flex items-center justify-center order-2 bg-pink-200 bg-one md:order-1">
         <section className="max-w-lg">
           <h1 className="text-3xl font-bold font-orbitron text-white px-4 pt-12 mb-6">
@@ -120,7 +128,7 @@ export default function Register() {
           <h2 className="text-3xl font-bold mb-6 text-[#47227f] font-orbitron">
             Register
           </h2>
-          <form>
+          <div>
             <TextInput
               label="Full Name"
               onChange={setFormValue}
@@ -151,7 +159,7 @@ export default function Register() {
               </a>{" "}
               to login
             </div>
-          </form>
+          </div>
         </section>
       </div>
     </main>
