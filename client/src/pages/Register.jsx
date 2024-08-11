@@ -1,9 +1,9 @@
 import Button from "../components/ui/Button";
 import TextInput from "../components/ui/TextInput";
-import { useState, useMemo, useRef } from "react";
+import { useState, /* useMemo, */ useRef } from "react";
 import useForm from "../hooks/useForm";
-import * as alc from "@alchemy/aa-alchemy";
-import { useMutation } from "@tanstack/react-query";
+// import * as alc from "@alchemy/aa-alchemy";
+// import { useMutation } from "@tanstack/react-query";
 // import { registerValidator } from "../utils/validators";
 import { useNavigate } from "react-router-dom";
 
@@ -28,7 +28,7 @@ export default function Register() {
   const iframeContainer = useRef();
   const {
     errors,
-    // submit,
+    submit,
     setFormValue,
     values: form,
   } = useForm({
@@ -43,32 +43,32 @@ export default function Register() {
     },
   });
 
-  const signer = useMemo(
-    () =>
-      new alc.AlchemySignerWebClient({
-        connection: {
-          apiKey: "jmq-jMPqCVXlVcTjoiGrcw1hj7I9SiWU",
-        },
-        iframeConfig: {
-          iframeElementId: "alchemy-aa-iframe",
-          iframeContainerId: "alchemy-aa-iframe-container",
-        },
-      }),
-    []
-  );
+  // const signer = useMemo(
+  //   () =>
+  //     new alc.AlchemySignerWebClient({
+  //       connection: {
+  //         apiKey: "jmq-jMPqCVXlVcTjoiGrcw1hj7I9SiWU",
+  //       },
+  //       iframeConfig: {
+  //         iframeElementId: "alchemy-aa-iframe",
+  //         iframeContainerId: "alchemy-aa-iframe-container",
+  //       },
+  //     }),
+  //   []
+  // );
 
-  const {
-    mutate: signup,
-    // isLoading,
-    // data: user,
-  } = useMutation({
-    mutationFn: () =>
-      signer.authenticate({
-        type: "passkey",
-        createNew: true,
-        username: "PASSKEY_NAME",
-      }),
-  });
+  // const {
+  //   // mutate: signup,
+  //   // isLoading,
+  //   // data: user,
+  // } = useMutation({
+  //   mutationFn: () =>
+  //     signer.authenticate({
+  //       type: "passkey",
+  //       createNew: true,
+  //       username: "PASSKEY_NAME",
+  //     }),
+  // });
 
   return (
     <main
@@ -149,7 +149,7 @@ export default function Register() {
               <input type="checkbox" /> By checking this box, you agree to our
               Terms and Conditions and Privacy Policy.
             </label>
-            <Button className="w-full mb-3" onClick={signup}>
+            <Button className="w-full mb-3" onClick={submit}>
               Continue with Passkeys
             </Button>
             <div>
